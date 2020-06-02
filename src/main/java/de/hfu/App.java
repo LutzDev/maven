@@ -1,6 +1,12 @@
 package de.hfu;
 import java.util.Scanner;
 
+/**
+* App Klasse
+* Eingaben werden als Großbuchstaben wieder ausgegeben
+* Aufgabe: Praktikum 05 - Maven
+*/
+
 public class App
 {
     public static void main( String[] args )
