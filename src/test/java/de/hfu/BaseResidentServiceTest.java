@@ -27,12 +27,9 @@ public class BaseResidentServiceTest {
 		Resident r1= new Resident("Moritz", "Müller", "Teststraße", "Testdorf", null);
 		Resident r2= new Resident("Tim", "Tester", "Josefdorer", "Freiburg", null);
 		Resident r3= new Resident("Lutz", "Weigold", "Beispielstraße", "Schlumpfhausen", null);
-
 		residentsList= Arrays.asList(r1, r2, r3);
-
 		residentRep= createMock(ResidentRepository.class);
 		baseResidentService= new BaseResidentService();
-
 	}
 
 	@Test
@@ -41,9 +38,9 @@ public class BaseResidentServiceTest {
 		expect(residentRep.getResidents()).andReturn(residentsList).times(3);
 		replay(residentRep);
 		baseResidentService.setResidentRepository(residentRep);
-		String expectedName= "Lutz";
 		String expectedFamilyName= "Weigold";
 		String expectedCity= "Schlumpfhausen";
+		String expectedName= "Lutz";
 		assertThat(baseResidentService.getUniqueResident(rf).getFamilyName(), equalTo(expectedFamilyName));
 		assertThat(baseResidentService.getUniqueResident(rf).getCity(), equalTo(expectedCity));
 		assertThat(baseResidentService.getUniqueResident(rf).getGivenName(), equalTo(expectedName));
