@@ -31,7 +31,7 @@ public class BaseResidentServiceMock {
 	}
 
 	@Test
-	public void test1() throws ResidentServiceException{
+	public void checkParameter() throws ResidentServiceException{
 		Resident filterResident = new Resident("Lutz", "Weigold", "Beispielstraße", "Schlumpfhausen", null);
 		expect(residentRep.getResidents()).andReturn(residentsList).times(5);
 		replay(residentRep);
